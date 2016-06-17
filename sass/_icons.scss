@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "catif";
+  src: url('fonts/catif.eot');
+  src: url('fonts/catif.eot?#iefix') format('eot'),
+    url('fonts/catif.woff') format('woff'),
+    url('fonts/catif.ttf') format('truetype'),
+    url('fonts/catif.svg#catif') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.catif {
+  font-family: "catif";
+  speak: none;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0.8em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.catif-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.catif { font-size: 1em; }
+.catif-2x { font-size: 2em; }
+.catif-3x { font-size: 3em; }
+.catif-4x { font-size: 4em; }
+.catif-5x { font-size: 5em; }
+.catif-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+/* Spinning animation =========== */
+.catif-ani-spin {
+  webkit-animation: catif-ani-spin 2s infinite linear;
+  -moz-animation: catif-ani-spin 2s infinite linear;
+          animation: catif-ani-spin 2s infinite linear;
+}
+.catif-ani-spin-pulse {
+  -webkit-animation: catif-ani-spin 1s infinite steps(10);
+  -moz-animation: catif-ani-spin 1s infinite steps(10);
+          animation: catif-ani-spin 1s infinite steps(10);
+}
+@-webkit-keyframes catif-ani-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-moz-keyframes catif-ani-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes catif-ani-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+
+.catif-logo-simple:before {
+	content: "\E000";
+}
+
+.catif-chevron-left:before {
+	content: "\E001";
+}
+
+.catif-chevron-right:before {
+	content: "\E002";
+}
+
+.catif-chevron-up:before {
+	content: "\E003";
+}
+
+.catif-chevron-down:before {
+	content: "\E004";
+}
+
+.catif-hamburger:before {
+	content: "\E005";
+}
+
+.catif-github:before {
+	content: "\E006";
+}
+
+.catif-facebook:before {
+	content: "\E007";
+}
+
+.catif-codepen:before {
+	content: "\E008";
+}
+
+.catif-dribbble:before {
+	content: "\E009";
+}
+
+.catif-linkedin:before {
+	content: "\E010";
+}
+
+.catif-twitter:before {
+	content: "\E011";
+}
+
+.catif-web:before {
+	content: "\E012";
+}
+
+.catif-pinterest:before {
+	content: "\E013";
+}
+
+.catif-instagram:before {
+	content: "\E014";
+}
+
+.catif-wechat:before {
+	content: "\E015";
+}
+
+.catif-mail:before {
+	content: "\E01A";
+}
+
+.catif-share:before {
+	content: "\E01B";
+}

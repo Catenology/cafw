@@ -1,0 +1,29 @@
+// _variables.scss
+
+//colors
+$color-grey: #444444;
+$color-grey-dark: darken($color-grey, 10%);
+$color-grey-light: lighten($color-grey, 65%);
+
+$color-brand: #FCBC50;
+$color-accent: #463139;
+
+$color-danger: #F2384A;
+$color-warning: #FFE066;
+$color-info: #2C99CE;
+$color-success: #50B273;
+
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Amiri:400,400italic,700,700italic);
+$font-family-sans:  "Oxygen","Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Amiri",Georgia, "Times New Roman", Times, serif;
+
+//breakpoints
+
+
+//misc
+$spacing-unit: 16px;
+$spacing-unit-md: $spacing-unit * 2;
+$spacing-unit-lg: $spacing-unit * 3;
+$spacing-unit-sm: $spacing-unit / 2;

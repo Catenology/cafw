@@ -1,0 +1,42 @@
+// _mixins/_links.scss
+@mixin link-default ($color:$color-brand) {
+  &,&:visited {
+    color: $color;
+  }
+  &:hover, &:focus {
+    color: darken($color, 20%);
+  }
+}
+@mixin link-underline-expand($color:$color-brand) {
+  &,&:visited {
+    color: $color;
+  }
+  &:hover, &:focus {
+    color: darken($color, 20%);
+  }
+  &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		border-bottom: .1em solid darken($color,20%);
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom:0;
+		@include transition(all, .3s, ease);
+	}
+	&:hover:after{
+		width: 100%;
+	}
+}
+
+
+@mixin link-bg($color1:$color-brand, $color2: #fff) {
+  &, &:visited {
+    color: $color1;
+  }
+  &:hover, &:focus {
+    background-color: $color1;
+    color: $color2;
+  }
+}

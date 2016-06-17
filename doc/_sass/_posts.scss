@@ -1,0 +1,29 @@
+//icons
+.post-icons {
+	li {
+		width: 16%;
+		height: 100px;
+		position: relative;
+	}
+	.post-icon-glyph {
+		color: $color-grey;
+		font-size: 48px;
+	}
+	.post-icon-meta {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+//post-grid
+.post-grid {
+	.row {
+		padding-top: $spacing-unit-sm;
+		padding-bottom: $spacing-unit-sm;
+	}
+	.column, .columns {
+		background-color: $color-brand;
+		text-align: center;
+	}
+}

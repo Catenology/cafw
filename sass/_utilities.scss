@@ -1,0 +1,56 @@
+// _utilities.scss
+.clearfix,
+.container:after,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+.max-full-width {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-justify {
+    text-align: justify !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.hidden {
+    display: none !important;
+}
+.invisible {
+    visibility: hidden;
+}
+
+//list
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+}
+.list-inline {
+  &>li {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "Grid System"
+date:   2016-01-05 14:50:21 -0700
+categories: style
+---
+<div class="post-grid">
+	<div class="row">
+		<p>The grid system is based on 12 columns with a max width of 960px. .container class is the main wrapper of the grid system. To use the grid system, wrap content with <code class="css">.row</code> class first, then apply column classes to the children.</p>
+<pre><code>&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="four columns"&gt;four&lt;/div&gt;
+		&lt;div class="eight columns"&gt;eight&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+	</div>
+	<div class="row">
+		<div class="twelve columns">twelve</div>
+	</div>
+	<div class="row">
+		<div class="one column">one</div>
+		<div class="eleven columns">eleven</div>
+	</div>
+	<div class="row">
+		<div class="two columns">two</div>
+		<div class="ten columns">ten</div>
+	</div>
+	<div class="row">
+		<div class="three columns">three</div>
+		<div class="nine columns">nine</div>
+	</div>
+	<div class="row">
+		<div class="four columns">four</div>
+		<div class="eight columns">eight</div>
+	</div>
+	<div class="row">
+		<div class="five columns">five</div>
+		<div class="seven columns">seven</div>
+	</div>
+	<div class="row">
+		<div class="six columns">six</div>
+		<div class="six columns">six</div>
+	</div>
+	<div class="row">
+		<div class="four columns">four</div>
+		<div class="four columns">four</div>
+		<div class="four columns">four</div>
+	</div>
+	<div class="row">
+		<div class="three columns">three</div>
+		<div class="three columns">three</div>
+		<div class="six columns">six</div>
+	</div>
+	<p>Columns can be offset:</p>
+<pre><code>&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="four columns offset-by-two"&gt;four&lt;/div&gt;
+		&lt;div class="four columns"&gt;four&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+	<div class="row">
+		<div class="four columns offset-by-two">four</div>
+		<div class="four columns">four</div>
+	</div>
+	<div class="row">
+		<div class="six columns offset-by-three">six</div>
+	</div>
+	<div class="row">
+		<div class="six columns offset-by-six">six</div>
+	</div>
+</div>

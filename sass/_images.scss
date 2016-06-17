@@ -1,0 +1,24 @@
+// _images.scss
+.thumbnail {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  &>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    @include transform (translate(-50%, -50%));
+  }
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
