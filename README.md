@@ -1,2 +1,2 @@
-# cafw
+# catfw
 Design framework for Catenology
