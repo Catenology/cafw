@@ -1,7 +1,7 @@
 language: node_js
 before_install:
-  - sudo apt-get install ruby
-  - gem install jekyll
+  - gem install jekyll        # yeah, it works if you install it beforehand
+  - apt-get install ruby
 install:
 - npm install --only=dev
 script:
