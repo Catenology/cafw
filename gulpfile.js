@@ -11,8 +11,13 @@ const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const del = require('del');
+const util = require('gulp-util');
+const ftp = require('vinyl-ftp');
+const minimist = require('minimist');
+const deployargs = minimist(process.argv.slice(2));
 
-gulp.task('default', ['iconfont', 'styles', 'scripts']);
+gulp.task('default',['clean', 'build']);
+gulp.task('build', ['iconfont', 'styles', 'scripts']);
 
 //clean dist folder
 gulp.task('clean', function() {
@@ -117,4 +122,18 @@ gulp.task('doc', function(cb) {
         console.log(stderr);
         cb(err);
     })
+});
+
+//ftp deployment
+gulp.task('deploy', function(){
+  const remotePath = '/catfw/';
+  const conn = ftp.create({
+    host: '184.168.61.1',
+    user: deployargs.user,
+    password: deployargs.password,
+    log: util.log
+  });
+  gulp.src('doc/*')
+  .pipe(conn.newer(remotePath))
+  .pipe(conn.dest(remotePath));
 });
