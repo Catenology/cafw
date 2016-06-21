@@ -129,13 +129,14 @@ gulp.task('doc', function(cb) {
 
 //ftp deployment
 gulp.task('deploy', function(){
-  const remotePath = '/catfw/';
   const conn = ftp.create({
     host: '184.168.61.1',
     user: deployargs.user,
     password: deployargs.password,
     log: util.log
   });
+
   gulp.src('doc/_site/*')
-  .pipe(conn.dest(remotePath));
+  .pipe(conn.rmdir('catfw'))
+  .pipe(conn.dest('catfw'));
 });
