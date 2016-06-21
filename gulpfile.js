@@ -133,7 +133,7 @@ gulp.task('deploy', function(){
     password: deployargs.password,
     log: util.log
   });
-  gulp.src('doc/*')
+  gulp.src('doc/_site/*')
   .pipe(conn.newer(remotePath))
   .pipe(conn.dest(remotePath));
 });
