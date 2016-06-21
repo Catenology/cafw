@@ -28,7 +28,9 @@ gulp.task('build', ['iconfont', 'styles', 'scripts']);
 
 //clean dist folder
 gulp.task('clean', function() {
-    return del(['dist']);
+    del(['dist']);
+    //clean referenced assets
+    del(['doc/css/catfw.min.css','doc/css/fonts/catif.*','doc/js/catfw.min.js']);
 });
 
 //generate icon font from svg files
@@ -115,8 +117,6 @@ gulp.task('justsass', function() {
 
 //generate documentation site and build it with jekyll
 gulp.task('doc', function(cb) {
-    //clean referenced assets
-    del(['doc/css/catfw.min.css','doc/css/fonts/catif.*','doc/js/catfw.min.js']);
     //grab new assets
     gulp.src('dist/catfw.min.css')
         .pipe(gulp.dest('doc/css/'));

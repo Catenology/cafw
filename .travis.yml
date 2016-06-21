@@ -7,7 +7,7 @@ before_install:
 install:
 - npm install --only=dev
 script:
-- gulp build
+- gulp
 - gulp doc
 env:
   global:
