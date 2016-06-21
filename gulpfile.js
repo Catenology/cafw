@@ -135,8 +135,7 @@ gulp.task('deploy', function(){
     password: deployargs.password,
     log: util.log
   });
-
+  conn.rmdir('catfw');
   gulp.src('doc/_site/*')
-  .pipe(conn.rmdir('catfw'))
   .pipe(conn.dest('catfw'));
 });
