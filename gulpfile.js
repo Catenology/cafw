@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const minifycss = require('gulp-minify-css');
 const concat = require('gulp-concat');
+const replace = require('gulp-replace');
 const iconfont = require('gulp-iconfont');
 const svgmin = require('gulp-svgmin');
 const consolidate = require('gulp-consolidate');
@@ -130,6 +131,12 @@ gulp.task('doc', function(cb) {
         console.log(stderr);
         cb(err);
     })
+});
+
+gulp.task('cachebust', function(){
+  gulp.src(['doc/_site/index.html'])
+  .pipe(replace(/@@hash/g, timestamp))
+  .pipe(gulp.dest('doc/_site/'));
 });
 
 //ftp deployment
