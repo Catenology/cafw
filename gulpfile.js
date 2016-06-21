@@ -137,6 +137,5 @@ gulp.task('deploy', function(){
     log: util.log
   });
   gulp.src('doc/_site/*')
-  .pipe(conn.newer(remotePath))
   .pipe(conn.dest(remotePath));
 });
