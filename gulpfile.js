@@ -15,8 +15,13 @@ const util = require('gulp-util');
 const ftp = require('vinyl-ftp');
 const minimist = require('minimist');
 const deployargs = minimist(process.argv.slice(2));
+const conn = ftp.create({
+  host: deployargs.host,
+  user: deployargs.user,
+  password: deployargs.password,
+  log: util.log
+});
 var timestamp = Math.round(Date.now() / 1000);
-
 
 gulp.task('default',['clean', 'build']);
 gulp.task('build', ['iconfont', 'styles', 'scripts']);
@@ -128,14 +133,13 @@ gulp.task('doc', function(cb) {
 });
 
 //ftp deployment
-gulp.task('deploy', function(){
-  const conn = ftp.create({
-    host: deployargs.host,
-    user: deployargs.user,
-    password: deployargs.password,
-    log: util.log
-  });
+gulp.task('deploy',['cleanremote'], function(){
   gulp.src('doc/_site/*')
-  .pipe(conn.rmdir('/catfw/'))
-  .pipe(conn.dest('/catfw/'));
+  .pipe(conn.dest('catfw'));
+});
+
+gulp.task('cleanremote', function(cb) {
+    return conn.rmdir('catfw', function(err){
+        cb();
+    });
 });
