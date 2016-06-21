@@ -15,6 +15,8 @@ const util = require('gulp-util');
 const ftp = require('vinyl-ftp');
 const minimist = require('minimist');
 const deployargs = minimist(process.argv.slice(2));
+var timestamp = Math.round(Date.now() / 1000);
+
 
 gulp.task('default',['clean', 'build']);
 gulp.task('build', ['iconfont', 'styles', 'scripts']);
@@ -45,7 +47,7 @@ gulp.task('iconfont', function() {
             appendCodepoints: true,
             fontPath: 'fonts',
             formats: ['ttf', 'eot', 'woff', 'svg'],
-            timestamp: Math.round(Date.now() / 1000)
+            timestamp: timestamp
         }))
         //generate _icons.scss
         .on('glyphs', function(glyphs) {
@@ -53,6 +55,7 @@ gulp.task('iconfont', function() {
                 fontName: 'catif',
                 fontPath: 'fonts/',
                 className: 'catif',
+                timestamp: timestamp,
                 glyphs: glyphs.map(function(glyph) {
                     return {
                         codepoint: glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase(),
