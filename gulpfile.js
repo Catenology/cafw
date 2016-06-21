@@ -134,7 +134,7 @@ gulp.task('doc', function(cb) {
 
 //ftp deployment
 gulp.task('deploy',['cleanremote'], function(){
-  gulp.src('doc/_site/*')
+  gulp.src('doc/_site/**/*.*')
   .pipe(conn.dest('catfw'));
 });
 
