@@ -1,25 +1,25 @@
 'use strict'
-const gulp = require('gulp');
+var gulp = require('gulp');
 var merge = require('merge-stream');
-const sass = require('gulp-sass');
-const minifycss = require('gulp-minify-css');
-const concat = require('gulp-concat');
-const replace = require('gulp-replace');
-const iconfont = require('gulp-iconfont');
-const svgmin = require('gulp-svgmin');
-const consolidate = require('gulp-consolidate');
-const rename = require('gulp-rename');
-const foreach = require('gulp-foreach');
-const exec = require('child_process').exec;
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const del = require('del');
-const util = require('gulp-util');
-const zip = require('gulp-zip');
-const ftp = require('vinyl-ftp');
-const minimist = require('minimist');
-const deployargs = minimist(process.argv.slice(2));
-const conn = ftp.create({
+var sass = require('gulp-sass');
+var minifycss = require('gulp-minify-css');
+var concat = require('gulp-concat');
+var replace = require('gulp-replace');
+var iconfont = require('gulp-iconfont');
+var svgmin = require('gulp-svgmin');
+var consolidate = require('gulp-consolidate');
+var rename = require('gulp-rename');
+var foreach = require('gulp-foreach');
+var exec = require('child_process').exec;
+var babel = require('gulp-babel');
+var uglify = require('gulp-uglify');
+var del = require('del');
+var util = require('gulp-util');
+var zip = require('gulp-zip');
+var ftp = require('vinyl-ftp');
+var minimist = require('minimist');
+var deployargs = minimist(process.argv.slice(2));
+var conn = ftp.create({
     host: deployargs.host,
     user: deployargs.user,
     password: deployargs.password,
