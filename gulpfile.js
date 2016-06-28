@@ -1,4 +1,6 @@
+'use strict'
 const gulp = require('gulp');
+var merge = require('merge-stream');
 const sass = require('gulp-sass');
 const minifycss = require('gulp-minify-css');
 const concat = require('gulp-concat');
@@ -13,30 +15,28 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const util = require('gulp-util');
+const zip = require('gulp-zip');
 const ftp = require('vinyl-ftp');
 const minimist = require('minimist');
 const deployargs = minimist(process.argv.slice(2));
 const conn = ftp.create({
-  host: deployargs.host,
-  user: deployargs.user,
-  password: deployargs.password,
-  log: util.log
+    host: deployargs.host,
+    user: deployargs.user,
+    password: deployargs.password,
+    log: util.log
 });
 var timestamp = Math.round(Date.now() / 1000);
 
-gulp.task('default',['clean', 'build']);
-gulp.task('build', ['iconfont', 'styles', 'scripts']);
+gulp.task('default', ['cachebust']);
 
-//clean dist folder
+//clean generated files
 gulp.task('clean', function() {
-    del(['dist']);
-    //clean referenced assets
-    del(['doc/css/catfw.min.css','doc/css/fonts/catif.*','doc/js/catfw.min.js']);
+    return del(['dist', 'doc/_site', 'doc/files/catfw.zip', 'doc/css/catfw.min.css', 'doc/css/fonts/catif.*', 'doc/js/catfw.min.js']);
 });
 
 //generate icon font from svg files
-gulp.task('iconfont', function() {
-    gulp.src('fonts/svg/*.svg')
+gulp.task('iconfont', ['clean'], function() {
+    let fsiconfont = gulp.src('fonts/svg/*.svg')
         //minify svg source files
         .pipe(foreach(function(stream, file) {
             return stream
@@ -80,23 +80,26 @@ gulp.task('iconfont', function() {
                 .pipe(gulp.dest('sass/'));
         })
         .pipe(gulp.dest('dist/fonts/'));
+    return fsiconfont;
 });
 
 //compile stylesheet
-gulp.task('styles', function() {
-    gulp.src('sass/main.scss')
+gulp.task('styles', ['iconfont'], function() {
+    let fsstyles = gulp.src('sass/main.scss')
         //compile sass
         .pipe(sass())
+        .pipe(rename('catfw.css'))
         .pipe(gulp.dest('dist'))
         //minify
         .pipe(minifycss())
         .pipe(rename('catfw.min.css'))
         .pipe(gulp.dest('dist'));
+    return fsstyles;
 });
 
 //compile javascript
-gulp.task('scripts', function() {
-    gulp.src('js/main.js')
+gulp.task('scripts', ['styles'], function() {
+    let fsscripts = gulp.src('js/main.js')
         //compile babel
         .pipe(babel({
             presets: ['es2015']
@@ -106,25 +109,44 @@ gulp.task('scripts', function() {
         //minify
         .pipe(uglify())
         .pipe(rename('catfw.min.js'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'));
+    return fsscripts;
 });
 
 //just concat a sass file
 gulp.task('justsass', function() {
-    gulp.src(['sass/_variables.scss', 'sass/mixins/*.scss', 'sass/_typography.scss', 'sass/_code.scss', 'sass/_grid.scss', 'sass/_buttons.scss', 'sass/_links.scss', 'sass/_labels.scss', 'sass/_images.scss', 'sass/_dialog.scss', 'sass/_carousel.scss', 'sass/_navbar.scss', 'sass/_modal.scss', 'sass/_pagination.scss', 'sass/_animation.scss', 'sass/_icons.scss', 'sass/_utilities.scss'])
+    let fsjustsass = gulp.src(['sass/_variables.scss', 'sass/mixins/*.scss', 'sass/_typography.scss', 'sass/_code.scss', 'sass/_grid.scss', 'sass/_buttons.scss', 'sass/_links.scss', 'sass/_labels.scss', 'sass/_images.scss', 'sass/_dialog.scss', 'sass/_carousel.scss', 'sass/_navbar.scss', 'sass/_modal.scss', 'sass/_pagination.scss', 'sass/_animation.scss', 'sass/_icons.scss', 'sass/_utilities.scss'])
         .pipe(concat('catfw.scss'))
         .pipe(gulp.dest('dist'));
+    return fsjustsass;
 });
 
-//generate documentation site and build it with jekyll
-gulp.task('doc', function(cb) {
-    //grab new assets
-    gulp.src('dist/catfw.min.css')
-        .pipe(gulp.dest('doc/css/'));
-    gulp.src('dist/catfw.min.js')
-        .pipe(gulp.dest('doc/js/'));
-    gulp.src('dist/fonts/*')
-        .pipe(gulp.dest('doc/css/fonts/'));
+//zip dist folder files
+gulp.task('zip', ['scripts'], function() {
+    let fszip = gulp.src('dist/**')
+        .pipe(zip('catfw.zip'))
+        .pipe(gulp.dest('dist'));
+    return fszip;
+});
+
+//copy files
+gulp.task('copyfiles', ['zip'], function() {
+    //files for downloading
+    let fsdist = gulp.src('dist/**')
+        .pipe(gulp.dest('doc/files'));
+    //files for documentation site
+    let fscss = gulp.src(['dist/*.min.css'])
+        .pipe(gulp.dest('doc/css'));
+    let fsfonts = gulp.src(['dist/fonts/*.ttf', 'dist/fonts/*.woff', 'dist/fonts/*.svg', 'dist/fonts/*.eot'])
+        .pipe(gulp.dest('doc/css/fonts'));
+    let fsjs = gulp.src(['dist/*.min.js'])
+        .pipe(gulp.dest('doc/js'));
+    // merge stream
+    let fscopyfiles = merge(fsdist, fscss, fsfonts, fsjs);
+    return fscopyfiles;
+});
+
+gulp.task('jekyll', ['copyfiles'], function(cb) {
     //jekyll build the site
     exec(['jekyll b --source doc --destination doc/_site'], function(err, stdout, stderr) {
         console.log(stdout);
@@ -133,20 +155,24 @@ gulp.task('doc', function(cb) {
     })
 });
 
-gulp.task('cachebust', function(){
-  gulp.src(['doc/_site/index.html'])
-  .pipe(replace(/@@hash/g, timestamp))
-  .pipe(gulp.dest('doc/_site/'));
+//add timestamp to static assets to bust cache
+gulp.task('cachebust', ['jekyll'], function() {
+    let fscachebust = gulp.src(['doc/_site/**/*.html', 'doc/_site/**/*.md'])
+        .pipe(replace(/@@hash/g, timestamp))
+        .pipe(gulp.dest('doc/_site/'));
+    return fscachebust;
 });
 
 //ftp deployment
-gulp.task('deploy',['cleanremote'], function(){
-  gulp.src('doc/_site/**/*.*')
-  .pipe(conn.dest('catfw'));
+gulp.task('deploy', ['cleanremote'], function() {
+    let fsdeploy = gulp.src('doc/_site/**/*.*')
+        .pipe(conn.dest('catfw'));
+    return fsdeploy;
 });
 
+//clean remote folder on ftp server
 gulp.task('cleanremote', function(cb) {
-    return conn.rmdir('catfw', function(err){
+    return fsconn.rmdir('catfw', function(err) {
         cb();
     });
 });

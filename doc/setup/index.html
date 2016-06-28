@@ -1,0 +1,23 @@
+---
+layout: page
+title: Setup
+weight: 1
+---
+<div class="setup">
+	<a href="{{ site.baseurl }}/files/catfw.zip?=@@hash" download class="btn btn-ghost">Download</a>
+
+		<h5>Original CSS</h5>
+		<input type="text" value="{{ site.baseurl }}/files/catfw.css?=@@hash" />
+		<button class="btn btn-cta" type="button">Copy</button>
+		<h5>Minified CSS</h5>
+		{% for file in site.static_files %}
+		{% endfor %}
+		<input type="text" value="{{ site.baseurl }}/files/catfw.min.css?=@@hash" />
+		<button class="btn btn-cta" type="button">Copy</button>
+		<h5>Original JavaScript</h5>
+		<input type="text" value="{{ site.baseurl }}/files/catfw.js?=@@hash" />
+		<button class="btn btn-cta" type="button">Copy</button>
+		<h5>Minified Javascript</h5>
+		<input type="text" value="{{ site.baseurl }}/files/catfw.min.js?=@@hash" />
+		<button class="btn btn-cta" type="button">Copy</button>
+</div>

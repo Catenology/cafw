@@ -5,7 +5,10 @@
             <a href="/" title="{{ site.title }}"><span class="catif catif-logo-simple"></span></a>
         </div>
         <div class="site-nav ten columns">
-          <a href="{{ site.baseurl | prepend: site.url }}/style">Style</a>
+          {% assign pages = site.pages | sort: "weight" %}
+          {% for page in pages %}
+          <a href="{{ page.url | prepend: baseurl }}">{{ page.title }}</a>
+          {% endfor %}
         </div>
       </div>
     </div>

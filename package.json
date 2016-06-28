@@ -34,7 +34,9 @@
     "gulp-svgmin": "^1.2.2",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.2.0",
     "lodash": "^4.13.1",
+    "merge-stream": "^1.0.0",
     "minimist": "^1.2.0",
     "rimraf": "^2.5.2",
     "vinyl-ftp": "^0.4.5"
