@@ -172,7 +172,7 @@ gulp.task('deploy', ['cleanremote'], function() {
 
 //clean remote folder on ftp server
 gulp.task('cleanremote', function(cb) {
-    return fsconn.rmdir('catfw', function(err) {
+    return conn.rmdir('catfw', function(err) {
         cb();
     });
 });
