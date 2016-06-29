@@ -207,6 +207,167 @@ pre {
   .offset-by-one-half.columns {
     margin-left: 52%; } }
 
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border-color: transparent;
+  border: 2px solid transparent;
+  -webkit-transition: all, ease, 0.3s;
+  -moz-transition: all, ease, 0.3s;
+  -ms-transition: all, ease, 0.3s;
+  -o-transition: all, ease, 0.3s;
+  transition: all, ease, 0.3s;
+  padding: 12px 36px;
+  font-size: 1em;
+  line-height: 12px;
+  border-radius: 0px; }
+
+.btn-lg {
+  padding: 16px 48px;
+  font-size: 2em;
+  line-height: 16px;
+  border-radius: 0px; }
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.8em;
+  line-height: 8px;
+  border-radius: 0px; }
+
+.btn-default {
+  color: #fff;
+  background-color: #444444;
+  border-color: transparent; }
+  .btn-default:focus, .btn-default.focus {
+    color: #fff;
+    background-color: #2b2b2b;
+    border-color: transparent; }
+  .btn-default:hover {
+    color: #e6e6e6;
+    background-color: #2b2b2b;
+    border-color: transparent; }
+
+.btn-default.danger {
+  color: #fff;
+  background-color: #F2384A;
+  border-color: transparent; }
+  .btn-default.danger:focus, .btn-default.danger.focus {
+    color: #fff;
+    background-color: #e80f24;
+    border-color: transparent; }
+  .btn-default.danger:hover {
+    color: #e6e6e6;
+    background-color: #e80f24;
+    border-color: transparent; }
+
+.btn-default.warning {
+  color: #444444;
+  background-color: #FFE066;
+  border-color: transparent; }
+  .btn-default.warning:focus, .btn-default.warning.focus {
+    color: #444444;
+    background-color: #ffd633;
+    border-color: transparent; }
+  .btn-default.warning:hover {
+    color: #2b2b2b;
+    background-color: #ffd633;
+    border-color: transparent; }
+
+.btn-default.success {
+  color: #fff;
+  background-color: #50B273;
+  border-color: transparent; }
+  .btn-default.success:focus, .btn-default.success.focus {
+    color: #fff;
+    background-color: #3f905c;
+    border-color: transparent; }
+  .btn-default.success:hover {
+    color: #e6e6e6;
+    background-color: #3f905c;
+    border-color: transparent; }
+
+.btn-default.info {
+  color: #fff;
+  background-color: #2C99CE;
+  border-color: transparent; }
+  .btn-default.info:focus, .btn-default.info.focus {
+    color: #fff;
+    background-color: #237aa4;
+    border-color: transparent; }
+  .btn-default.info:hover {
+    color: #e6e6e6;
+    background-color: #237aa4;
+    border-color: transparent; }
+
+.btn-ghost {
+  color: #444444;
+  background-color: transparent;
+  border-color: #444444; }
+  .btn-ghost:focus, .btn-ghost.focus {
+    color: #444444;
+    background-color: transparent;
+    border-color: #2b2b2b; }
+  .btn-ghost:hover {
+    color: #2b2b2b;
+    background-color: transparent;
+    border-color: #2b2b2b; }
+
+.btn-ghost.danger {
+  color: #F2384A;
+  background-color: transparent;
+  border-color: #F2384A; }
+  .btn-ghost.danger:focus, .btn-ghost.danger.focus {
+    color: #F2384A;
+    background-color: transparent;
+    border-color: #e80f24; }
+  .btn-ghost.danger:hover {
+    color: #e80f24;
+    background-color: transparent;
+    border-color: #e80f24; }
+
+.btn-ghost.warning {
+  color: #ffcb00;
+  background-color: transparent;
+  border-color: #FFE066; }
+  .btn-ghost.warning:focus, .btn-ghost.warning.focus {
+    color: #ffcb00;
+    background-color: transparent;
+    border-color: #ffd633; }
+  .btn-ghost.warning:hover {
+    color: #cca300;
+    background-color: transparent;
+    border-color: #ffd633; }
+
+.btn-ghost.success {
+  color: #50B273;
+  background-color: transparent;
+  border-color: #50B273; }
+  .btn-ghost.success:focus, .btn-ghost.success.focus {
+    color: #50B273;
+    background-color: transparent;
+    border-color: #3f905c; }
+  .btn-ghost.success:hover {
+    color: #3f905c;
+    background-color: transparent;
+    border-color: #3f905c; }
+
+.btn-ghost.info {
+  color: #2C99CE;
+  background-color: transparent;
+  border-color: #2C99CE; }
+  .btn-ghost.info:focus, .btn-ghost.info.focus {
+    color: #2C99CE;
+    background-color: transparent;
+    border-color: #237aa4; }
+  .btn-ghost.info:hover {
+    color: #237aa4;
+    background-color: transparent;
+    border-color: #237aa4; }
+
 a {
   text-decoration: none;
   display: inline-block;
@@ -248,8 +409,8 @@ a {
 
 @font-face {
   font-family: "catif";
-  src: url("fonts/catif.eot?v=1.0.1467148630");
-  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467148630") format("woff"), url("fonts/catif.ttf?v=1.0.1467148630") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467148630") format("svg");
+  src: url("fonts/catif.eot?v=1.0.1467235660");
+  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467235660") format("woff"), url("fonts/catif.ttf?v=1.0.1467235660") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467235660") format("svg");
   font-weight: normal;
   font-style: normal; }
 

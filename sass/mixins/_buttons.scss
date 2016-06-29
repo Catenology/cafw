@@ -1,16 +1,25 @@
 //_mixins/_buttons.scss
-@mixin button-default($color-bg, $color-fg) {
-	border-color: $color-bg;
-	color: $color-bg;
+@mixin button-style($color-text, $color-bg, $color-border) {
+  color: $color-text;
+  background-color: $color-bg;
+  border-color: $color-border;
 
-	&:hover {
-		background-color: $color-bg;
-		color: $color-fg;
-		transition: background 0.3s ease;
-	}
+  &:focus,
+  &.focus {
+    color: $color-text;
+    background-color: darken($color-bg, 10%);
+    border-color: darken($color-border, 10%);
+  }
+  &:hover {
+    color: darken($color-text, 10%);
+    background-color: darken($color-bg, 10%);
+    border-color: darken($color-border, 10%);
+  }
+}
 
-	&:active {
-		background-color: darken($color-bg, 10%);
-		border-color: darken($color-bg, 10%);
-	}
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
 }
