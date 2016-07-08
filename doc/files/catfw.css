@@ -315,6 +315,18 @@ pre {
     color: #2b2b2b;
     background-color: transparent;
     border-color: #2b2b2b; }
+  .btn-ghost:hover, .btn-ghost:focus, .btn-ghost.focus {
+    color: #fff;
+    background-color: #444444;
+    border-color: #444444; }
+    .btn-ghost:hover:focus, .btn-ghost:hover.focus, .btn-ghost:focus:focus, .btn-ghost:focus.focus, .btn-ghost.focus:focus, .btn-ghost.focus.focus {
+      color: #fff;
+      background-color: #2b2b2b;
+      border-color: #2b2b2b; }
+    .btn-ghost:hover:hover, .btn-ghost:focus:hover, .btn-ghost.focus:hover {
+      color: #e6e6e6;
+      background-color: #2b2b2b;
+      border-color: #2b2b2b; }
 
 .btn-ghost.danger {
   color: #F2384A;
@@ -328,19 +340,43 @@ pre {
     color: #e80f24;
     background-color: transparent;
     border-color: #e80f24; }
+  .btn-ghost.danger:hover, .btn-ghost.danger:focus, .btn-ghost.danger.focus {
+    color: #fff;
+    background-color: #F2384A;
+    border-color: #F2384A; }
+    .btn-ghost.danger:hover:focus, .btn-ghost.danger:hover.focus, .btn-ghost.danger:focus:focus, .btn-ghost.danger:focus.focus, .btn-ghost.danger.focus:focus, .btn-ghost.danger.focus.focus {
+      color: #fff;
+      background-color: #e80f24;
+      border-color: #e80f24; }
+    .btn-ghost.danger:hover:hover, .btn-ghost.danger:focus:hover, .btn-ghost.danger.focus:hover {
+      color: #e6e6e6;
+      background-color: #e80f24;
+      border-color: #e80f24; }
 
 .btn-ghost.warning {
-  color: #ffcb00;
+  color: #FFE066;
   background-color: transparent;
   border-color: #FFE066; }
   .btn-ghost.warning:focus, .btn-ghost.warning.focus {
-    color: #ffcb00;
+    color: #FFE066;
     background-color: transparent;
     border-color: #ffd633; }
   .btn-ghost.warning:hover {
-    color: #cca300;
+    color: #ffd633;
     background-color: transparent;
     border-color: #ffd633; }
+  .btn-ghost.warning:hover, .btn-ghost.warning:focus, .btn-ghost.warning.focus {
+    color: #444444;
+    background-color: #FFE066;
+    border-color: #FFE066; }
+    .btn-ghost.warning:hover:focus, .btn-ghost.warning:hover.focus, .btn-ghost.warning:focus:focus, .btn-ghost.warning:focus.focus, .btn-ghost.warning.focus:focus, .btn-ghost.warning.focus.focus {
+      color: #444444;
+      background-color: #ffd633;
+      border-color: #ffd633; }
+    .btn-ghost.warning:hover:hover, .btn-ghost.warning:focus:hover, .btn-ghost.warning.focus:hover {
+      color: #2b2b2b;
+      background-color: #ffd633;
+      border-color: #ffd633; }
 
 .btn-ghost.success {
   color: #50B273;
@@ -354,6 +390,18 @@ pre {
     color: #3f905c;
     background-color: transparent;
     border-color: #3f905c; }
+  .btn-ghost.success:hover, .btn-ghost.success:focus, .btn-ghost.success.focus {
+    color: #fff;
+    background-color: #50B273;
+    border-color: #50B273; }
+    .btn-ghost.success:hover:focus, .btn-ghost.success:hover.focus, .btn-ghost.success:focus:focus, .btn-ghost.success:focus.focus, .btn-ghost.success.focus:focus, .btn-ghost.success.focus.focus {
+      color: #fff;
+      background-color: #3f905c;
+      border-color: #3f905c; }
+    .btn-ghost.success:hover:hover, .btn-ghost.success:focus:hover, .btn-ghost.success.focus:hover {
+      color: #e6e6e6;
+      background-color: #3f905c;
+      border-color: #3f905c; }
 
 .btn-ghost.info {
   color: #2C99CE;
@@ -367,6 +415,18 @@ pre {
     color: #237aa4;
     background-color: transparent;
     border-color: #237aa4; }
+  .btn-ghost.info:hover, .btn-ghost.info:focus, .btn-ghost.info.focus {
+    color: #fff;
+    background-color: #2C99CE;
+    border-color: #2C99CE; }
+    .btn-ghost.info:hover:focus, .btn-ghost.info:hover.focus, .btn-ghost.info:focus:focus, .btn-ghost.info:focus.focus, .btn-ghost.info.focus:focus, .btn-ghost.info.focus.focus {
+      color: #fff;
+      background-color: #237aa4;
+      border-color: #237aa4; }
+    .btn-ghost.info:hover:hover, .btn-ghost.info:focus:hover, .btn-ghost.info.focus:hover {
+      color: #e6e6e6;
+      background-color: #237aa4;
+      border-color: #237aa4; }
 
 a {
   text-decoration: none;
@@ -409,8 +469,8 @@ a {
 
 @font-face {
   font-family: "catif";
-  src: url("fonts/catif.eot?v=1.0.1467235660");
-  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467235660") format("woff"), url("fonts/catif.ttf?v=1.0.1467235660") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467235660") format("svg");
+  src: url("fonts/catif.eot?v=1.0.1467946971");
+  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467946971") format("woff"), url("fonts/catif.ttf?v=1.0.1467946971") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467946971") format("svg");
   font-weight: normal;
   font-style: normal; }
 

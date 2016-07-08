@@ -40,17 +40,32 @@
 .btn-ghost {
   & {
     @include button-style($color-grey, transparent, $color-grey);
+    &:hover, &:focus, &.focus {
+      @include button-style(#fff, $color-grey, $color-grey);
+    }
   }
   &.danger {
     @include button-style($color-danger, transparent, $color-danger);
+    &:hover, &:focus, &.focus {
+      @include button-style(#fff, $color-danger, $color-danger);
+    }
   }
   &.warning {
-    @include button-style(darken($color-warning, 20%), transparent, $color-warning);
+    @include button-style($color-warning, transparent, $color-warning);
+    &:hover, &:focus, &.focus {
+      @include button-style($color-grey, $color-warning, $color-warning);
+    }
   }
   &.success {
     @include button-style($color-success, transparent, $color-success);
+    &:hover, &:focus, &.focus {
+      @include button-style(#fff, $color-success, $color-success);
+    }
   }
   &.info {
     @include button-style($color-info, transparent, $color-info);
+    &:hover, &:focus, &.focus {
+      @include button-style(#fff, $color-info, $color-info);
+    }
   }
 }
