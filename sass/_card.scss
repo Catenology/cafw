@@ -1,0 +1,21 @@
+.card {
+  display: block;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: .2em;
+  padding: $spacing-unit;
+  margin-bottom: $spacing-unit;
+  overflow: hidden;
+}
+
+.card-header {
+  color: $color-brand;
+  font-size: 1.3em;
+  &:after {
+    content: "";
+    display: block;
+    background-color: $color-brand;
+    height: 1px;
+    margin: $spacing-unit/2 0;
+  }
+}

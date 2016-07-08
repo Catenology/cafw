@@ -23,6 +23,9 @@
   & {
     @include button-style(#fff, $color-grey, transparent);
   }
+  &.cta {
+    @include button-style(#fff, $color-brand, transparent);
+  }
   &.danger {
     @include button-style(#fff, $color-danger, transparent);
   }
@@ -42,6 +45,12 @@
     @include button-style($color-grey, transparent, $color-grey);
     &:hover, &:focus, &.focus {
       @include button-style(#fff, $color-grey, $color-grey);
+    }
+  }
+  &.cta {
+    @include button-style($color-brand, transparent, $color-brand);
+    &:hover, &:focus, &.focus {
+      @include button-style($color-grey, $color-brand, $color-brand);
     }
   }
   &.danger {

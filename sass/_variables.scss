@@ -3,7 +3,8 @@
 //colors
 $color-grey: #444444;
 $color-grey-dark: darken($color-grey, 10%);
-$color-grey-light: lighten($color-grey, 65%);
+$color-grey-light: lighten($color-grey, 30%);
+$color-offwhite: #F2F2F2;
 
 $color-brand: #FCBC50;
 $color-accent: #463139;
@@ -27,7 +28,9 @@ $spacing-unit: 16px;
 $spacing-unit-md: $spacing-unit * 2;
 $spacing-unit-lg: $spacing-unit * 3;
 $spacing-unit-sm: $spacing-unit / 2;
+$spacing-unit-xs: $spacing-unit / 4;
 
 $font-size-default: 1em;
 $font-size-sm: .8em;
+$font-size-md: 1.2em;
 $font-size-lg: 2em;

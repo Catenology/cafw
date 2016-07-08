@@ -54,3 +54,13 @@
     display: inline-block;
   }
 }
+//global box-sizing for inheritance
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

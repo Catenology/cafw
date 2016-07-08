@@ -102,7 +102,18 @@ p {
   margin-top: 0; }
 
 pre {
-  tab-size: 2; }
+  overflow: auto;
+  background-color: #fff;
+  tab-size: 2;
+  word-break: normal;
+  word-wrap: break-word;
+  font-family: "Amiri", Georgia, "Times New Roman", Times, serif; }
+  pre code {
+    display: block;
+    padding: 16px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-radius: .2em; }
 
 .container {
   position: relative;
@@ -207,6 +218,25 @@ pre {
   .offset-by-one-half.columns {
     margin-left: 52%; } }
 
+.card {
+  display: block;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: .2em;
+  padding: 16px;
+  margin-bottom: 16px;
+  overflow: hidden; }
+
+.card-header {
+  color: #FCBC50;
+  font-size: 1.3em; }
+  .card-header:after {
+    content: "";
+    display: block;
+    background-color: #FCBC50;
+    height: 1px;
+    margin: 8px 0; }
+
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -249,6 +279,19 @@ pre {
   .btn-default:hover {
     color: #e6e6e6;
     background-color: #2b2b2b;
+    border-color: transparent; }
+
+.btn-default.cta {
+  color: #fff;
+  background-color: #FCBC50;
+  border-color: transparent; }
+  .btn-default.cta:focus, .btn-default.cta.focus {
+    color: #fff;
+    background-color: #fba91e;
+    border-color: transparent; }
+  .btn-default.cta:hover {
+    color: #e6e6e6;
+    background-color: #fba91e;
     border-color: transparent; }
 
 .btn-default.danger {
@@ -327,6 +370,31 @@ pre {
       color: #e6e6e6;
       background-color: #2b2b2b;
       border-color: #2b2b2b; }
+
+.btn-ghost.cta {
+  color: #FCBC50;
+  background-color: transparent;
+  border-color: #FCBC50; }
+  .btn-ghost.cta:focus, .btn-ghost.cta.focus {
+    color: #FCBC50;
+    background-color: transparent;
+    border-color: #fba91e; }
+  .btn-ghost.cta:hover {
+    color: #fba91e;
+    background-color: transparent;
+    border-color: #fba91e; }
+  .btn-ghost.cta:hover, .btn-ghost.cta:focus, .btn-ghost.cta.focus {
+    color: #444444;
+    background-color: #FCBC50;
+    border-color: #FCBC50; }
+    .btn-ghost.cta:hover:focus, .btn-ghost.cta:hover.focus, .btn-ghost.cta:focus:focus, .btn-ghost.cta:focus.focus, .btn-ghost.cta.focus:focus, .btn-ghost.cta.focus.focus {
+      color: #444444;
+      background-color: #fba91e;
+      border-color: #fba91e; }
+    .btn-ghost.cta:hover:hover, .btn-ghost.cta:focus:hover, .btn-ghost.cta.focus:hover {
+      color: #2b2b2b;
+      background-color: #fba91e;
+      border-color: #fba91e; }
 
 .btn-ghost.danger {
   color: #F2384A;
@@ -469,8 +537,8 @@ a {
 
 @font-face {
   font-family: "catif";
-  src: url("fonts/catif.eot?v=1.0.1467946971");
-  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467946971") format("woff"), url("fonts/catif.ttf?v=1.0.1467946971") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467946971") format("svg");
+  src: url("fonts/catif.eot?v=1.0.1467955480");
+  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1467955480") format("woff"), url("fonts/catif.ttf?v=1.0.1467955480") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1467955480") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -650,6 +718,14 @@ a {
 
 .list-inline > li {
   display: inline-block; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
 
 /*
 Catenology Framework

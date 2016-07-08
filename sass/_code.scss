@@ -1,0 +1,15 @@
+pre {
+  overflow: auto;
+  background-color: #fff;
+  tab-size: 2;
+  word-break: normal;
+  word-wrap: break-word;
+  font-family: $font-family-serif;
+  code {
+    display: block;
+    padding: $spacing-unit;
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-radius: .2em;
+  }
+}
