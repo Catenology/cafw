@@ -1,17 +1,18 @@
 language: ruby
 rvm:
   - 2.2
-node_js:
-  - "4.4"
 before_install:
   - ruby -v
   - gem install jekyll -v 3.1
 install:
-- npm install --only=dev
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install --only=dev
 script:
-- gulp
+  - gulp
 env:
   global:
+  - TRAVIS_NODE_VERSION="0.12"
+  - TRAVIS_NODE_VERSION="4"
   - secure: umJd7SAIE8391UQAunVl0AUGcKV+XSNOKt5ES9oNBtAwV0q+gvYn2E1YxXoJ9i7ROzd0pHSuwHrpWOFJf2Ld8RgFOaKTFa5/zykczqkTYb+Fedsjnj5xMDCBYhH0wJVfsJYyMl5YjyUWCLs43/wrJLzfSOnoUezW0vr4Xtzmwz8nn7EFVNM+9zHAQ3VZNZ6R/6T3dFebwgZmAoAKg1U2g2F7a0GGLR4kkjxJ6kOJtGVr0XIC+BBzy5q65zJWrBxi3iWtyNH1TAFOawOqivNjocCbS7nKUac/Sd3QKQ6wbYi15MQ35ZXeYCT9nuDIkCoKgmhlFhCzK6qT2g6DT4DlMhR5t5DHqWTFEpjK4eMt9sdCz9Xq0UC5x/BbMSTuUpkSUYFgnn8RwtWz9WfK42WOHSfspOfEjdFdLK9New8RqTqeknwEGyFjKCUSOWtpyZXWlID7W6q1U7QbgQHtgS/ZUL2NvzQWKqzCd9Vqm3aBUL7N2fiCOy+SqCrRlvEZnGf6YrAMZYOHSdQs9800Cce/G7DTgRnjKpRqYkGxFXZw+DrEO4Yvz4lCywKQcpmrEc2fV1iXQycKltfITDo0dwJcS9b2tU0drvxpQKATS/eGKcmWMKHu9uxEwFMPs9tjd+qOur63J2uKoX+FrGnpPeBGwkoOXUKBO630mehQAG+RevY=
   - secure: oEp+L1ANxZFDbKkLEuwyNzHhFpW6xjjKA3Q5DSwgHvx3LAtvib8sW3d6l80cvBoOdDy61BZjCjzDUzk2yJ7/kEo5y7FoqingUPCheES9TD1G/vxVtdUwY9bbza06PumLdbUE6yjUeSCY7MeBZzZX25GPJGb0q9EmhdArWMqbgDA7nZwEXbdLOmpB61vKpr3uAsvBlcy16HNSqOMavJHp3FS7qIfMFsDuY5BHhGxgyxs3MZvDZExfShGR/GPe9XqLBR5y9bcd3kgpqRQ2U1l9xVTdw+JLUDOa0iyTkKuSxpDih8AybK2vyB541vTTMHH1Q+trlOKXqMqEZ8veYD5FPC4lVJ44G8nVv1+PyD/tkWm/Btdkxj5BX+hWQco1rFL0sP2rDdVG3FMYTBoeflTueJmq5bbmGg+3U7FidwVrsvxh6PZnk8n39QqIg7jG4OmSD4WMufrvSJfCuTYiQnR1j3jCOfmpj0fOwpUOzjqIqAf+x8XN9bWt4bohDMrbVaSHkHIo6qZ7kU3WPKhaUmd42DPtZwp9Al0UOozWyFbL1I7I0AUqGHFgJb3EyKgw/yk6+7nHLUmpjlcLDvvVZrRXYQa0RnT/OKCEPywq3t/Kv8BUiNywQAjAga9B+g+2OK4cGz7wFkFmHpGH8rmnkXJfQwLBmwIUY4aCPalxlkcPNi0=
   - secure: jIWnD38EehNSkYp9gIDS9XODaTSOFZqMj+yYKxAnz+WLbHRiCL1MDuwb0EXE7Hod/X4hts7QzmhSnYARQ+G4yV2k/0CmToKt/z2q989kSkETFvutR2Ew91pX1smwE8snJZaE0tlVSyMxbNf9cA3OErnte6Frh4kMbz8Y0VnQGaVHA+xqmw3ez6BuM8VzXbFGPwtn7r4QV1YwM4mATZjzVxFf05I+d9Wu8APbN/SUGQsd9eTcRO0B6NS/tYkVUnyZHXnOChDWENw/p+hlrf0aoe0Dhjf3zzj71Lr0FFcgKzd34zRIYZ2TyscTZMI/MZjZ5CvQHJHWBO7w89j7z0JvX8h/TjonhSqObXWCLgwH2oAQUFV6yOj71142Arq12/qUdmFBP/mmxYfAZHuD3HrYpl+d54n6ShSoeor0vqby1LaI8w2zRNfewN7s4MNwkf1vdyjbkQS3yHPmWMCg+NIhfTaFH66/SW+HEFS/7ekWZt9uTLwgjZPSgcwg89u0paq2WY77EWN1RPSt+W6P06HjeqLPm7V7ViL2YCQ7apF8txP9GsKoB0pNEl7jEqK3rDOClwCYRq1ZzHFrwmQI3N7sOgoW9j3ZVpCUw104fKVeBJfEF9A9y5i2PCZQSo2J0agi17DsIsvJxTLJhwhwuG61GZusgVwGovFcyKNEt1/6RQk=

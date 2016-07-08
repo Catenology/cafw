@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var merge = require('merge-stream');
 var sass = require('gulp-sass');
-var minifycss = require('gulp-minify-css');
+var cleancss = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var replace = require('gulp-replace');
 var iconfont = require('gulp-iconfont');
@@ -91,7 +91,7 @@ gulp.task('styles', ['iconfont'], function() {
         .pipe(rename('catfw.css'))
         .pipe(gulp.dest('dist'))
         //minify
-        .pipe(minifycss())
+        .pipe(cleancss({compatibility: 'ie8'}))
         .pipe(rename('catfw.min.css'))
         .pipe(gulp.dest('dist'));
     return fsstyles;
