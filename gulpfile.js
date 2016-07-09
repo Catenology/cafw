@@ -1,5 +1,5 @@
 'use strict'
-var gulp = require('gulp');
+const gulp = require('gulp');
 var merge = require('merge-stream');
 var sass = require('gulp-sass');
 var cleancss = require('gulp-clean-css');
