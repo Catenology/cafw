@@ -113,14 +113,6 @@ gulp.task('scripts', ['styles'], () => {
     return fsscripts;
 });
 
-//just concat a sass file
-gulp.task('justsass', () => {
-    let fsjustsass = gulp.src(['sass/_variables.scss', 'sass/mixins/*.scss', 'sass/_typography.scss', 'sass/_code.scss', 'sass/_grid.scss', 'sass/_buttons.scss', 'sass/_links.scss', 'sass/_labels.scss', 'sass/_images.scss', 'sass/_dialog.scss', 'sass/_carousel.scss', 'sass/_navbar.scss', 'sass/_modal.scss', 'sass/_pagination.scss', 'sass/_animation.scss', 'sass/_icons.scss', 'sass/_utilities.scss'])
-        .pipe(concat('catfw.scss'))
-        .pipe(gulp.dest('dist'));
-    return fsjustsass;
-});
-
 //zip dist folder files
 gulp.task('zip', ['scripts'], () => {
     let fszip = gulp.src('dist/**')

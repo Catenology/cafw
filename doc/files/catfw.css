@@ -535,10 +535,30 @@ a {
 .img-circle {
   border-radius: 50%; }
 
+input,
+textarea {
+  outline: none;
+  border: 2px solid transparent;
+  padding: 1em;
+  width: 100%; }
+
+.input-wrapper {
+  position: relative;
+  padding: .5em 0; }
+  .input-wrapper label {
+    color: #FCBC50;
+    position: absolute;
+    top: 1em;
+    left: 1em; }
+  .input-wrapper input:focus + label, .input-wrapper input:not(:placeholder-shown) + label,
+  .input-wrapper textarea:focus + label,
+  .input-wrapper textarea:not(:placeholder-shown) + label {
+    opacity: 0; }
+
 @font-face {
   font-family: "catif";
-  src: url("fonts/catif.eot?v=1.0.1468036631");
-  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1468036631") format("woff"), url("fonts/catif.ttf?v=1.0.1468036631") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1468036631") format("svg");
+  src: url("fonts/catif.eot?v=1.0.1470334266");
+  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1470334266") format("woff"), url("fonts/catif.ttf?v=1.0.1470334266") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1470334266") format("svg");
   font-weight: normal;
   font-style: normal; }
 

@@ -1,26 +1,37 @@
 //_mixins/_animation.scss
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+    @if $i < $max {
+      $animations: #{$animations + ", "};
     }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
 }
 
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
+@mixin animation-delay($time: 3s) {
+  -webkit-animation-delay: $time;
+  -moz-animation-delay: $time;
+  animation-delay: $time;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
 }
