@@ -31,7 +31,7 @@ gulp.task('default', ['cachebust']);
 
 //clean generated files
 gulp.task('clean', ()=> {
-    return del(['dist', 'doc/_site', 'doc/files/catfw.zip', 'doc/css/catfw.min.css', 'doc/css/fonts/catif.*', 'doc/js/catfw.min.js','doc/files/*']);
+    return del(['dist', 'doc/_site', 'doc/css/catfw.min.css', 'doc/css/fonts/catif.*', 'doc/js/catfw.min.js','doc/files/*.*', '!doc/files/placeholders/*']);
 });
 
 //generate icon font from svg files
