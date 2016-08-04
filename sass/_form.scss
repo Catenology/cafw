@@ -1,0 +1,26 @@
+input,
+textarea {
+  outline: none;
+  border: 2px solid transparent;
+  padding: 1em;
+  width: 100%;
+}
+.input-wrapper {
+  position: relative;
+  padding: .5em 0;
+  label {
+    color: $color-brand;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+  input,
+  textarea {
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + label {
+        opacity: 0;
+      }
+    }
+  }
+}
