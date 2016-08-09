@@ -2,7 +2,6 @@
 a {
 	text-decoration: none;
 	display: inline-block;
-	padding: 0 4px;
 	position: relative;
 	@include transition(all, .3s, ease);
 	@include link-default;
