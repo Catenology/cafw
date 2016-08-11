@@ -5,4 +5,10 @@ a {
 	position: relative;
 	@include transition(all, .3s, ease);
 	@include link-default;
+	&.link-underline-expand {
+		@include link-underline-expand;
+	}
+	&.link-background {
+		@include link-background;
+	}
 }

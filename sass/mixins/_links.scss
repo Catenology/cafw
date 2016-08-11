@@ -14,26 +14,29 @@
   &:hover, &:focus {
     color: darken($color, 20%);
   }
-  &:after {
+  &:before, &:after {
 		content: "";
 		display: block;
 		position: absolute;
 		border-bottom: .1em solid darken($color,20%);
-    width: 0;
     margin-left: auto;
     margin-right: auto;
     bottom:0;
 		@include transition(all, .3s, ease);
+    left:50%;
+    @include transform(translateX(-50%));
+    width: 0;
 	}
-	&:hover:after{
-		width: 100%;
+	&:hover:before, &:hover:after{
+    width: 100%;
 	}
 }
 
 
-@mixin link-bg($color1:$color-brand, $color2: #fff) {
+@mixin link-background($color1:$color-brand, $color2: #fff) {
   &, &:visited {
     color: $color1;
+    padding: 0 .5em;
   }
   &:hover, &:focus {
     background-color: $color1;
