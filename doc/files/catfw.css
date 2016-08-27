@@ -512,15 +512,15 @@ a {
   a.link-underline-expand, a.link-underline-expand:visited {
     color: #FCBC50; }
   a.link-underline-expand:hover, a.link-underline-expand:focus {
-    color: #e28f04; }
+    color: #FCBC50; }
   a.link-underline-expand:before, a.link-underline-expand:after {
     content: "";
     display: block;
     position: absolute;
-    border-bottom: 0.1em solid #e28f04;
+    border-bottom: 0.1em solid #FCBC50;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0;
+    top: 105%;
     -webkit-transition: all, 0.3s, ease;
     -moz-transition: all, 0.3s, ease;
     -ms-transition: all, 0.3s, ease;
@@ -588,8 +588,8 @@ textarea {
 
 @font-face {
   font-family: "catif";
-  src: url("fonts/catif.eot?v=1.0.1470950257");
-  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1470950257") format("woff"), url("fonts/catif.ttf?v=1.0.1470950257") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1470950257") format("svg");
+  src: url("fonts/catif.eot?v=1.0.1472334593");
+  src: url("fonts/catif.eot?#iefix") format("eot"), url("fonts/catif.woff?v=1.0.1472334593") format("woff"), url("fonts/catif.ttf?v=1.0.1472334593") format("truetype"), url("fonts/catif.svg#catif?v=1.0.1472334593") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -718,6 +718,12 @@ textarea {
 
 .catif-share:before {
   content: "\E01B"; }
+
+.catif-navigate-close:before {
+  content: "\E01C"; }
+
+.catif-heart:before {
+  content: "\E01D"; }
 
 .clearfix,
 .container:after,

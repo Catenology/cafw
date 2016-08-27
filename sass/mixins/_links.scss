@@ -12,16 +12,16 @@
     color: $color;
   }
   &:hover, &:focus {
-    color: darken($color, 20%);
+    color: $color;
   }
   &:before, &:after {
 		content: "";
 		display: block;
 		position: absolute;
-		border-bottom: .1em solid darken($color,20%);
+		border-bottom: .1em solid $color;
     margin-left: auto;
     margin-right: auto;
-    bottom:0;
+    top: 105%;
 		@include transition(all, .3s, ease);
     left:50%;
     @include transform(translateX(-50%));
