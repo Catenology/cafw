@@ -11,6 +11,6 @@ description: > # this means to ignore newlines until "baseurl:"
   The frontend toolkit that powers Catenology websites.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "catfw.catenology.com" # the base hostname & protocol for your site
-
+# url: "127.0.0.1:4000" # for local testing
 # Build settings
 markdown: kramdown
